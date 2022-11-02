@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="regcss.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="title">
+        Patient General Information
+    </div>
+    <form id="login" action="" >
+    <div class="form">
+      <div class="alert">Your Message Sent</div><br>
+       <div class="inputfield">
+          <label>Full Name</label>
+          <input type="text" class="input" required  id="name">
+       </div>  
+        <div class="inputfield">
+            <label for="birthday">DOB</label>
+            <input type="date" id="birthday" name="birthday" required>
+       </div>  
+       <div class="inputfield">
+          <label>Blood Group</label>
+          <select id="blood" value=""  required>
+            <option value="" >Select</option>
+            <option >A Positive</option>
+            <option>A Negative</option>
+            <option>A Unknown</option>
+            <option>B Positive</option>
+            <option>B Negative</option>
+            <option>B Unknown</option>
+            <option>AB Positive</option>
+            <option>AB Negative</option>
+            <option>AB Unknown</option>
+            <option>O Positive</option>
+            <option>O Negative</option>
+            <option>O Unknown</option>
+            <option>Unknown</option>
+        </select>
+       </div>  
+      <div class="inputfield">
+          <label>Age</label>
+          <input type="number" class="input" required id="age">
+       </div> 
+      
+        <div class="inputfield">
+          <label>Email Address</label>
+          <input type="text" class="input" id="email" required>
+       </div> 
+      <div class="inputfield">
+          <label>Phone Number1</label>
+          <input type="text" class="input" id="p1" required>
+       </div> 
+      <div class="inputfield">
+          <label>Phone Number2</label>
+          <input type="text" class="input" id="p2" required>
+       </div> 
+      <div class="inputfield">
+          <label>Phone Number3</label>
+          <input type="text" class="input" id="p3" required>
+       </div> 
+      <div class="inputfield">
+          <label>Phone Number4</label>
+          <input type="text" class="input"id="p4" required>
+       </div> 
+       <div class="inputfield">
+        <label>Pregnancy Week</label>
+        <input type="number" class="input" required id="pweek">
+     </div>
+     <div class="inputfield">
+        <label>Book Your Slot</label>
+        <select id="slot" value=""  required>
+          <option value="" >Select</option>
+          <option >9am-12-pm</option>
+          <option>12pm-4pm</option>
+          <option>4pm-8pm</option>
+          <option>8pm-12am</option>
+          <option>12am-am</option>
+          <option>5am-9am</option>
+          
+      </select>
+     </div>
+     
+      
+     <div class="inputfield">
+        <label>Address</label>
+        <textarea class="textarea" id="address"></textarea>
+     </div> 
+    <div class="inputfield">
+        <label>Postal Code</label>
+        <input type="text" class="input" id="postal" required>
+     </div> 
+       
+    <div class="inputfield">
+      <input  type="submit" value="Register" class="btn" required>
+    </div>
+  
+   </div>
+</form>
+</div>	
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+<script src="reg.js"></script>
+  
+</body>
+</html>

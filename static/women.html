@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style-main.css">
+    <link rel="stylesheet" href="bmi.css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <title>Fertility Quotient Calculator</title>
+</head>
+<body>
+
+    <div class="title-main">
+        <h1>Fertility Quotient</h1>
+    </div>
+    <br>
+    <div class="block">
+        <div class="content-1">
+            <p>
+                Fertility quotient is an indicator of an individual’s capability to reproduce. The subjective topic of fertility reserve
+                is being converted to an objective score. It is ascore against 100, given against inputs provided by the user. The score is then converted to an 
+                indicative value to help the person understand the status of his / her fertility levels. 
+            </p>
+        </div>
+        
+    </div>
+        <div>
+            <section>
+                <h1 class="title-sub">Fertility Quotient Calculator</h1>
+            </section>
+        </div>
+        <form class="form" id="myform">         
+            <div class="container">
+                <div class="age">
+                    <label for="age"> Age : </label>
+                    <input class="input" type="text" id="ageInput" name="age" onPaste="return false" placeholder="Age" autofocus onkeypress='return isNumberKey(event)' onkeyup='saveValue(this);' required>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="bmi">
+                    <label for="bmi"> Body Mass Index (BMI) value : </label>
+                    <input class="input" type="text" id="bmiInput" name="bmi" onPaste="return false" placeholder="BMI"  onkeypress='return isNumberKey(event)' onkeyup='saveValue(this);' required>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="afc">
+                    <label for="afc"> Antral Follicle (AFC) Count : </label>
+                    <input class="input" type="text" id="afcInput" name="afc" onPaste="return false" placeholder="AFC"  onkeypress='return isNumberKey(event);' onkeyup='saveValue(this);' required>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="amh">
+                    <label for="amh"> Anti-Müllerian Hormone (AMH) level : </label>
+                    <input class="input" type="text" id="amhInput" name="amh" onPaste="return false" placeholder="AMH" onkeypress='return isNumberKey(event)' onkeyup='saveValue(this);' required>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div>
+                <button id="btn1" class="button" type="button" onclick="setTimeout(computeQuotient(), 1500)" >Calculate</button>
+                <button id="btn" class="button" type="reset" value="Reset form">Reset</button>
+            </div>
+            <br>
+            <div id="error"></div>
+        </form>
+        <table id="wrapper">
+            <tr class="box" id="score-container">
+                <td id="score-op">
+                    score: <span id="score"> </span>                                
+                </td>
+                <td id="perc-op">
+                    Percentage: <span id="percentage"></span>    
+                </td>
+                <td id="res-op">
+                    result: <span id="result"> </span>                                
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div class="results-info">
+        <div id="poor-fertility">
+            <h3 style="text-align: center;" id="result-head">Poor Fertility</h3>
+            <br>
+            <article class="exposition"> 
+                Women who get a rating of “Poor Fertility” for their fertility quotient are advised to meet a fertility
+                specialist immediately. The algorithm gives this rating only if the situation is dire and only if it needs quick
+                intervention. In most cases, this rating will be got if the age of the women is well past the “best fertility age range”
+                and if the ovarian reserves are depleted significantly.
+                <br><br>
+                Important point to note here is that there are various treatment options for such women, including IVF and various donor
+                programs
+            </article>
+        </div>
+        <div id="low-fertility">
+            <h3 style="text-align: center;" id="result-head">Low Fertility</h3> 
+            <article class="exposition"> 
+                A lady with a fertility quotient of “Low Fertility” has to take things seriously. There are some things
+                that are not as good as they should be. It can be the age, the BMI or the ovarian reserves may be depleting or multiple
+                factors may be affecting fertility. A lady with “Low Fertility” can move to “Poor Fertility” rather quickly. Such women
+                should meet a fertility specialist quickly and address the problem of infertility.
+                <br><br>
+                One important point to note here is that some of the key factors affecting fertility cannot be rolled back. Once they
+                deteriorate, they stay that way or become worse. So women with a fertility quotient of “Low Fertility” should move
+                quickly, if they plan to have a child.
+                <br><br>
+                It is recommended that such women to meet up with a fertility specialist immediately and get some investigations done to
+                understand the situation in more detail. A good fertility specialist should be able to help such women conceive with the
+                various artificial reproduction techniques that are available (Timed intercourse, IUI, IVF, IVF-ICSI, IMSI etc.)
+            </article>
+        </div>
+        <div id="average-fertility">
+            <h3 style="text-align: center;" id="result-head">Average Fertility </h3> 
+            <article class="exposition">
+                A lady with Average Fertility needs to play it safe. It means that her fertility status is not too
+                good, but neither is it very bad. It also indicates that it is not long before the fertility levels will drop quickly.
+                Such women are advised to plan for a child immediately and if there is no conception within 6 months, they need to meet
+                up with a fertility expert and take the doctor’s advice.
+                <br><br>
+                In-principle, women with Average Fertility should be able to conceive. In case this does not happen, it is possible that
+                there are other factors that are contributing to the observed infertility. These factors could be problems with the
+                fallopian tubes, there may be infections in the female reproductive canal, the oocyte quality may not be good, there may
+                be male factors also influencing conception etc.
+                <br><br>
+                It is advised that such women to meet up with a fertility expert as soon as possible and proceed as per their advice.
+                Some investigations may be needed to understand the cause behind the observed infertility.
+            </article>
+        </div>
+        <div id="best-fertility">
+            <h3 style="text-align: center;" id="result-head">Best Fertility</h3>
+            <article> class="exposition"
+                This status indicates that the lady is at the peak of her reproductive life-span. All her indicators are positive and the time is 
+                best suited for planning a child. Women who fall in this group need not worry much about their fertility status. Their internal 
+                systems are primed and ready for reproduction.
+                <br><br>
+                If women with “Best Fertility” status are planning to delay their plans of having a child by a few years, it may be better to freeze their eggs 
+                at this stage. The delay in child-bearing could be due to career reasons, personal reasons. It is recommended that such women to go 
+                for oocyte freezing. The technology of oocyte freezing is improving quickly and eggs may be frozen for years. The frozen “best” 
+                oocytes can be used for fertilization with the husband’s sperms at a later point of time.
+                <br><br>
+                If a lady has a fertility quotient of “Best Fertility” and is still unable to conceive, there may be other factors at play. It is 
+                possible that there are male fertility is not optimum or there may be fallopian tube blocks or the oocyte quality has some problems 
+                or there may be infections that are preventing conception or it can be even be a thyroid related issue.
+                <br><br>
+                Please consult a fertility specialist for further investigation for the cause of infertility.
+            </article>
+        </div>
+        <div id="good-fertility">
+            <h3 style="text-align: center;" id="result-head">Good Fertility</h3>
+            <article class="exposition"> 
+                A lady with a fertility quotient of “good fertility” is in good shape for having a child. There are one
+                or two factors that have started to deteriorate but there is nothing alarmingly wrong. The hormone levels and the
+                general health condition is good and there is no significant reason to be worried. Most couples with this fertility
+                quotient should be able to conceive within a span of 1 year if they are having unprotected intercourse.
+                <br><br>
+                If women with “Good Fertility” status are planning to delay their plans of having a child by a few years, it may be
+                better to freeze their eggs at this stage. The delay in child-bearing could be due to career reasons, personal reasons.
+                It is recommended that such women to go for oocyte freezing. The technology of oocyte freezing is improving quickly and
+                eggs may be frozen for years. The frozen “good” oocytes can be used for fertilization with the husband’s sperms at a
+                later point of time.
+                <br><br>
+                One important point to note here is that a lady with a fertility quotient of “Good Fertility” can still find it
+                difficult to conceive because there are various other factors that play a role. There could be problems with the
+                fallopian tubes, there may be infections in the female reproductive canal, the oocyte quality may not be good, there may
+                be male factors also influencing conception etc. Such women may need to consult a fertility specialist for further
+                investigation for the cause of infertility.
+            </article>
+        </div>
+        <hr>
+        <div class="content-2">
+            <article class="exposition">
+                * There have many research articles that address this topic of fertility capability. All research articles are more or less unanimous in 
+                their findings that a lady’s fertility is based on several factors which include  her age, her Antral Follicular Count (AFC), her AMH 
+                hormone levels and her general health condition. There are also other fringe  factors that contribute to the fertility aspect – like 
+                tobacco usage, addiction to alcohol or other drugs etc.
+                <br><br>
+                The score is calculated based on the woman’s fertility factors - AMH, AFC, Age and BMI. Some of these factors play a role more critical than the others. 
+                So, proper adjustments have been done in the algorithm to manage these variations.
+                <br><br>
+                Please note that the fertility quotient is an indicator of the fertility status. It is not a definitive advice from the doctor. 
+                Consult a fertility specialist to know more about your fertility quotient and fertility status. It is also important to note that a 
+                woman may move from one stage to another rather quickly based on the parameters that play a role. For example, a lady with a fertility 
+                quotient of “Best Fertility” may move to “Good Fertility” within the matter of a few months if her age is beyond 30 and if her AMH or AFC starts dropping quickly.
+            </article>
+        </div>
+    </div>
+
+    <button class="open-button" onclick="openForm()">Calculate BMI</button>
+    <div class="form-popup" id="myForm">
+        <div class="form-container">
+            <h1 id="bmi-head">Calculate BMI</h1>
+            <div class="container">
+                <div class="height">
+                    <input class="input" type="text" id="height" name="height" onPaste="return false" placeholder="Height" onkeypress='return isNumberKey(event)'>
+                    <select type="multiple" id="heightunits">
+                        <option value="metres" selected="selected">Meters</option>
+                        <option value="inches">Inches</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="weight">
+                    <input class="input" type="text" id="weight" name="weight" onPaste="return false" placeholder="Weight" onkeypress='return isNumberKey(event)'>
+                    <select type="multiple" id="weightunits">
+                        <option value="kg" selected="selected">Kgs</option>
+                        <option value="lb">lbs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container">
+                <div class="bmi-res">
+                    <span id="bmi-op"> </span>
+                    <br>
+                    <span id="bmi-cat"> </span>
+                </div>
+            </div>
+            <div class="calc">
+                <button class="btn" onclick="computeBMI();">Calculate</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="fertility.js"></script>
+    <script src="script-bmi.js"></script>
+
+</body>
+</html>

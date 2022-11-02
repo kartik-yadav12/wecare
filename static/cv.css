@@ -1,0 +1,34 @@
+body{
+    background-color:	#f8f8ff;
+}
+
+.container{
+    border:2px solid black;
+    margin: auto;
+    height: 700px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background-color: 	#C0C0C0;
+
+}
+
+#profile{
+    background-color: pink;
+}
+
+
+h1{
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+button{
+    font-weight: bolder;
+    width: 88px;
+    height: 31px;
+    text-align: center;
+    justify-content: end;
+}
+button:hover{
+    background-color: antiquewhite;
+}

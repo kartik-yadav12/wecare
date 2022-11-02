@@ -1,0 +1,191 @@
+:root {
+    font-family: 'Quicksand', sans-serif !important;
+    width: 85%;
+    margin: auto;
+    background-color: #d7e4f3;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .title-main {
+    text-align: center;
+    background-color: transparent;
+    padding: 5px;
+    margin: auto;
+    border-bottom: solid 2px #e97195;
+    color: #e65a84;
+    font-size: 20px;
+    text-shadow: 2px 2px 3px #9636a5;
+  }
+  hr {
+    border-top: solid 2px #e97195;
+  }
+  
+  .content-1 {
+    font-size: 17px;
+  }
+  
+  .content-2 {
+    font-size: 12px;
+    text-indent: 30px;
+  }
+  
+  .form {
+    text-align: center;
+    width: auto;
+    font-size: 17px;
+  }
+  
+  #error {
+    width: fit-content;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+    color: red;
+    margin: auto;
+  }
+  
+  .title-sub {
+    text-align: center;
+    text-decoration: underline;
+    color: #e97195;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px #9636a5;
+  }
+  
+  .button {
+    width: 155px;
+    padding: 8px;
+    font-family: 'Quicksand', sans-serif;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-weight: bold;
+    color: #000;
+    background-color: transparent;
+    border: solid 2px #000;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .button:hover {
+    background: #b3d4fc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(from center, #966b9d, #e97195);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,#966b9d, #e97195); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0px 15px 20px rgba(233, 113, 149, 0.5);
+    color: #000;
+    transform: translateY(-4px);
+    border: solid 2px #000;
+  }
+  
+  #space {
+    width: 100px;
+  }
+  
+  #wrapper {
+    display: table;
+    width: 100%;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    border: solid 2px #000;
+    background: #b3d4fc;  /* fallback for old browsers */
+    background: -webkit-radial-gradient(from center, #966b9d, #e97195);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,#966b9d, #e97195); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    box-shadow: 0px 15px 20px rgba(233, 113, 149, 0.5);
+    border-radius: 30px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  #score-op {
+    width: 33.33%;
+    position: relative;
+  }
+  #perc-op {
+    width: 33.33%;
+    position: relative;
+  }
+  #res-op {
+    width: auto;
+    position: relative;
+  }
+  
+  #ageInput,
+  #bmiInput,
+  #afcInput,
+  #amhInput {
+    margin-top: 10px;
+    width: 75px;
+    text-align: center;
+    color: #000;
+    outline: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #000 1px;
+    padding: 3px 10px;
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 17px;
+    background-color: transparent;
+    transition: all 0.5 ease-in;
+  }
+  
+  #ageInput:focus,
+  #bmiInput:focus,
+  #afcInput:focus,
+  #amhInput:focus {
+    border-bottom: solid 1px #9636a5;
+    outline: none;
+    transition: all 0.2s ease-in;
+    box-shadow: 1px 1px 1px 1px rgba(151, 54, 166, 0.8);
+  }
+  
+  label {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+  }
+  
+  #poor-fertility,
+  #average-fertility,
+  #good-fertility,
+  #best-fertility,
+  #low-fertility {
+    display: none;
+    font-size: 17px;
+    transition: 2s ease-in;
+  }
+  
+  .exposition {
+    padding: 20px;
+  }
+  
+  #result-head {
+    margin: auto;
+    width: fit-content;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 7px 30px 7px;
+    text-transform: uppercase;
+    color: #000;
+    border: solid 2px #000;
+    letter-spacing: 1.8px;
+    text-shadow: 2px 2px 2px gray;
+    box-shadow: 0px 10px 15px rgba(24, 22, 23, 0.3);
+  }
