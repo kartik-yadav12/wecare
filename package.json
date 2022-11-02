@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express.js": "^1.0.0",
+    "mongoose": "^6.6.1",
+    "nodemon": "^2.0.20"
+  },
+  "name": "hack1",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start":"node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urvashi-19/wecarehack1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/urvashi-19/wecarehack1/issues"
+  },
+  "homepage": "https://github.com/urvashi-19/wecarehack1#readme"
+}
